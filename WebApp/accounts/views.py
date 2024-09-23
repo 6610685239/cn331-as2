@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignupForm, LoginForm
+
 
 # Create your views here.
 
@@ -22,7 +23,7 @@ def login_views(request):
             if user is not None:
                 login(request, user)
                 if user.is_superuser:
-                    return redirect("admin_home")
+                    return redirect("/admin/")
                 else:
                     return redirect("user_home")
     else:
@@ -45,10 +46,6 @@ def user_signup(request):
 def user_logout(request):
     logout(request)
     return redirect("login")
-
-
-def admin_home(request):
-    return render(request, "index.html")
 
 
 def user_home(request):

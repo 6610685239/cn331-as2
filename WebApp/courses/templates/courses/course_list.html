@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Course List</title>
+</head>
+<body>
+    <h2>Available Courses</h2>
+    <ul>
+        {% for course in courses %}
+            <li>
+                {{ course.name }} (Available Slots: {{ course.available_slots }})
+                {% if course.can_enroll %}
+                    <a href="{% url 'enroll_course' course.id %}">Enroll</a>
+                {% else %}
+                    <span>Full</span>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No available courses at the moment.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html> 
