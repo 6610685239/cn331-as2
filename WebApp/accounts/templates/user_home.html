@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User Home</title>
-</head>
-<body>
-    <h2>Welcome, User!</h2>
-</body>
-</html>
+<h1>Welcome, {{ request.user.username }}</h1>
+
+<h2>Courses ที่เปิดให้ลงทะเบียน</h2>
+<ul>
+    {% for course in courses %}
+    <li>
+        {{ course.name }} - {{ course.available_slots }} ที่ว่าง
+        {% if course.can_enroll %}
+        <a href="{% url 'request_quota' course.id %}">ขอโควต้า</a>
+        {% else %}
+        No slots available or closed
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>

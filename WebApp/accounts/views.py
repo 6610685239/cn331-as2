@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignupForm, LoginForm
-
+from courses.models import Course
 
 # Create your views here.
 
@@ -49,4 +49,5 @@ def user_logout(request):
 
 
 def user_home(request):
-    return render(request, "index.html")
+    open_courses = Course.objects.filter(is_open=True)
+    return render(request, "user_home.html", {"courses": open_courses})
