@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignupForm, LoginForm
 from courses.models import Course
+from enrollment.models import Enrollment
 
 # Create your views here.
 

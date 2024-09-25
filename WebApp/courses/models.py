@@ -9,6 +9,7 @@ class Course(models.Model):
     year = models.PositiveIntegerField(default=0)  # ปีการศึกษา
     capacity = models.PositiveIntegerField(default=0)  # จำนวนที่รับ
     is_open = models.BooleanField(default=True)  # เปิดหรือปิดรายวิชา
+    available_slots = models.PositiveIntegerField(default=0)
 
     enrolled_users = models.ManyToManyField(
         User, blank=True, related_name="courses"
@@ -16,11 +17,17 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
-
+    @property
     def available_slots(self):
         """ตรวจสอบจำนวนที่ยังเหลืออยู่"""
         return self.capacity - self.enrolled_users.count()
 
     def can_enroll(self):
         """เช็คว่ายังสามารถขอโควต้าได้หรือไม่"""
-        return self.is_open and self.available_slots() > 0
+        return self.is_open and self.available_slots > 0
+
+    def enroll_user(self, user):
+        if self.can.enroll():
+            self.enrolled_user.add(user)
+            return True
+        return False

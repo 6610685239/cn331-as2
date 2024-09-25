@@ -12,4 +12,14 @@
         {% endif %}
     </li>
     {% endfor %}
+
+    
 </ul>
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </ul>
+{% endif %}
+<a href="{% url 'login' %}" class="btn btn-primary">ลงชื่อออก</a>

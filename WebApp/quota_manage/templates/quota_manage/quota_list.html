@@ -1,0 +1,11 @@
+<h1>Your Quota Requests</h1>
+<ul>
+    {% for enrollment in enrollments %}
+    <li>
+        {{ enrollment.course.name }} 
+        <a href="{% url 'cancel_quota' enrollment.id %}">Cancel Request</a>
+    </li>
+    {% empty %}
+    <li>No quota requests found.</li>
+    {% endfor %}
+</ul>
