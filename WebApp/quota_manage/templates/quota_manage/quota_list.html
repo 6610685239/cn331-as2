@@ -2,10 +2,18 @@
 <ul>
     {% for enrollment in enrollments %}
     <li>
-        {{ enrollment.course.name }} 
+        {{ enrollment.course.name }} - ลงทะเบียนเมื่อ {{ enrollment.requested_at }}
         <a href="{% url 'cancel_quota' enrollment.id %}">Cancel Request</a>
     </li>
     {% empty %}
     <li>No quota requests found.</li>
     {% endfor %}
 </ul>
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    </ul>
+{% endif %}
+<a href="{% url 'user_home' %}" class="btn btn-primary">กลับหน้า Home</a>
