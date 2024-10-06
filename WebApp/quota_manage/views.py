@@ -23,6 +23,6 @@ def cancel_quota(request, enrollment_id):
     enrollment.delete()
     course.enrolled_users.remove(request.user)
     course.save()
+
     messages.success(request, "ยกเลิกการลงทะเบียนสำเร็จ")
     return redirect("quota_list")  # Ensure this points to your quota_list view
-

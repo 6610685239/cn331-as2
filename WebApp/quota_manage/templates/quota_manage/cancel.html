@@ -1,0 +1,13 @@
+<div class="message-container">
+    {% if messages %}
+        <ul class="message-list">
+            {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+<div class="button-container">
+    <a href="{% url 'user_home' %}" class="btn btn-primary">กลับหน้า Home</a>
+</div>

@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap'); /* Vintage font */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+/* Vintage font */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Old Standard TT", serif; /* Vintage font */
+    font-family: "Old Standard TT", serif;
+    /* Vintage font */
 }
 
 body {
@@ -13,25 +15,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f5f5f5; /* Soft background color */
+    background: #f5f5f5;
+    /* Soft background color */
 }
 
 .login-box {
     width: 380px;
     padding: 40px 30px 50px 30px;
     background: #fff;
-    border-radius: 10px; /* More rounded corners */
+    border-radius: 10px;
+    /* More rounded corners */
     text-align: center;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
-    border: 2px solid #c5b299; /* Light brown border */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    /* Softer shadow */
+    border: 2px solid #c5b299;
+    /* Light brown border */
 }
 
 .login-box h1 {
-    font-size: 30px; /* Slightly smaller font size */
-    font-weight: 500; /* Regular weight */
+    font-size: 30px;
+    /* Slightly smaller font size */
+    font-weight: 500;
+    /* Regular weight */
     margin-bottom: 20px;
-    font-family: 'Old Standard TT', serif; /* Keep your custom vintage font */
-    color: #333; /* Darker title color */
+    font-family: 'Old Standard TT', serif;
+    /* Keep your custom vintage font */
+    color: #333;
+    /* Darker title color */
 }
 
 form {
@@ -44,17 +54,25 @@ form {
 }
 
 .field.shake {
-    animation: shake 0.3s ease-in-out; /* Add shake effect */
+    animation: shake 0.3s ease-in-out;
+    /* Add shake effect */
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         margin-left: 0px;
     }
-    20%, 80% {
-        margin-left: -8px; /* Slightly reduced shake effect */
+
+    20%,
+    80% {
+        margin-left: -8px;
+        /* Slightly reduced shake effect */
     }
-    40%, 60% {
+
+    40%,
+    60% {
         margin-left: 8px;
     }
 }
@@ -69,62 +87,79 @@ input {
     width: 100%;
     height: 100%;
     outline: none;
-    padding: 0 45px; /* Space for icon */
-    font-size: 16px; /* Adjusted font size */
+    padding: 0 45px;
+    /* Space for icon */
+    font-size: 16px;
+    /* Adjusted font size */
     background: none;
-    caret-color: #c5b299; /* Vintage caret color */
+    caret-color: #c5b299;
+    /* Vintage caret color */
     border-radius: 5px;
-    border: 2px solid #c5b299; /* Vintage border color */
+    border: 2px solid #c5b299;
+    /* Vintage border color */
     transition: all 0.2s ease;
 }
 
 .field .input-area i.icon {
     position: absolute;
     top: 50%;
-    left: 15px; /* Icon position */
+    left: 15px;
+    /* Icon position */
     font-size: 18px;
-    color: #c5b299; /* Vintage icon color */
+    color: #c5b299;
+    /* Vintage icon color */
     transform: translateY(-50%);
 }
 
 .field .input-area .error-icon {
     position: absolute;
     top: 50%;
-    right: 15px; /* Position for error icon */
+    right: 15px;
+    /* Position for error icon */
     color: #dc3545;
     font-size: 18px;
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
 }
 
 .field .error-txt {
     color: #dc3545;
     text-align: left;
     margin-top: 5px;
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
 }
 
 .field.error .error-txt {
-    display: block; /* Show error message */
+    display: block;
+    /* Show error message */
 }
 
 input:focus {
-    border-color: #b58d76; /* Change border color on focus */
+    border-color: #b58d76;
+    /* Change border color on focus */
 }
 
-input:focus ~ .icon {
-    color: #b58d76; /* Change icon color on focus */
+input:focus~.icon {
+    color: #b58d76;
+    /* Change icon color on focus */
 }
 
 /* Placeholder fade effect */
 input::placeholder {
-    color: #c5b299; /* Placeholder color */
-    font-size: 15px; /* Adjusted placeholder font size */
-    opacity: 0.5; /* Set initial opacity for the placeholder */
-    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    color: #c5b299;
+    /* Placeholder color */
+    font-size: 15px;
+    /* Adjusted placeholder font size */
+    opacity: 0.5;
+    /* Set initial opacity for the placeholder */
+    transition: opacity 0.5s ease;
+    /* Smooth transition for opacity */
 }
 
 input:focus::placeholder {
-    opacity: 0; /* Fade out the placeholder when input is focused */
+    opacity: 0;
+    /* Fade out the placeholder when input is focused */
 }
 
 .pass-txt {
@@ -133,12 +168,14 @@ input:focus::placeholder {
 }
 
 a {
-    color: #b58d76; /* Vintage link color */
+    color: #b58d76;
+    /* Vintage link color */
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; /* Underline links on hover */
+    text-decoration: underline;
+    /* Underline links on hover */
 }
 
 input[type="submit"] {
@@ -147,37 +184,47 @@ input[type="submit"] {
     color: #fff;
     padding: 0;
     border: none;
-    background: #b58d76; /* Vintage button color */
+    background: #b58d76;
+    /* Vintage button color */
     cursor: pointer;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    font-weight: 600; /* Bolder font for button */
+    font-weight: 600;
+    /* Bolder font for button */
 }
 
 input[type="submit"]:hover {
-    background: #c5b299; /* Lighter shade on hover */
+    background: #c5b299;
+    /* Lighter shade on hover */
 }
 
 @media (max-width: 400px) {
     .login-box {
-        width: 90%; 
+        width: 90%;
     }
 }
 
 .field.error input {
-    border-color: #dc3545; /* Red border for error */
+    border-color: #dc3545;
+    /* Red border for error */
 }
 
 .field .error-txt {
-    color: #dc3545; /* Red error color */
-    text-align: left; /* Align the error text to the left */
-    margin-top: 5px; /* Space above the error message */
-    font-size: 12px; /* Slightly smaller font for error messages */
-    display: block; /* Ensure it's displayed */
+    color: #dc3545;
+    /* Red error color */
+    text-align: left;
+    /* Align the error text to the left */
+    margin-top: 5px;
+    /* Space above the error message */
+    font-size: 12px;
+    /* Slightly smaller font for error messages */
+    display: block;
+    /* Ensure it's displayed */
 }
 
 .field.error .error-icon {
-    display: block; /* Show error icon */
+    display: block;
+    /* Show error icon */
 }
 
 .field {
@@ -186,22 +233,32 @@ input[type="submit"]:hover {
 }
 
 .error-txt {
-    color: #dc3545; /* Red error color */
-    text-align: left; /* Align the error text to the left */
-    margin-top: 5px; /* Space above the error message */
-    font-size: 12px; /* Slightly smaller font for error messages */
-    display: block; /* Ensure it's displayed */
+    color: #dc3545;
+    /* Red error color */
+    text-align: left;
+    /* Align the error text to the left */
+    margin-top: 5px;
+    /* Space above the error message */
+    font-size: 12px;
+    /* Slightly smaller font for error messages */
+    display: block;
+    /* Ensure it's displayed */
 }
 
 
 .signup-box {
-    width: 380px; /* Same width as login box */
+    width: 380px;
+    /* Same width as login box */
     padding: 40px 30px 50px 30px;
-    background: #fff; /* White background */
-    border-radius: 10px; /* Rounded corners */
+    background: #fff;
+    /* White background */
+    border-radius: 10px;
+    /* Rounded corners */
     text-align: center;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
-    border: 2px solid #c5b299; /* Light brown border */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    /* Softer shadow */
+    border: 2px solid #c5b299;
+    /* Light brown border */
 }
 
 /* Container box for user home page */
@@ -231,7 +288,8 @@ input[type="submit"]:hover {
 
 /* No slot available message styling */
 .no-slot {
-    color: #dc3545; /* Red error color */
+    color: #dc3545;
+    /* Red error color */
     font-size: 14px;
 }
 
@@ -299,14 +357,16 @@ input[type="submit"]:hover {
     top: 50%;
     right: 15px;
     font-size: 18px;
-    color: #c5b299; /* Vintage icon color */
+    color: #c5b299;
+    /* Vintage icon color */
     cursor: pointer;
     transform: translateY(-50%);
     transition: color 0.3s ease;
 }
 
 .toggle-password:hover {
-    color: #b58d76; /* Change color on hover */
+    color: #b58d76;
+    /* Change color on hover */
 }
 
 /* Welcome message */
@@ -326,7 +386,8 @@ input[type="submit"]:hover {
     padding: 15px;
     border-radius: 8px;
     margin-top: 20px;
-    display: none; /* Initially hidden, can be shown when needed */
+    display: none;
+    /* Initially hidden, can be shown when needed */
 }
 
 .subject-box h2 {
@@ -340,220 +401,328 @@ input[type="submit"]:hover {
 
 /* General styles for the user home page */
 body {
-    font-family: "Old Standard TT", serif; /* Vintage font */
-    background-color: #f4f4f4; /* Soft background color */
+    font-family: "Old Standard TT", serif;
+    /* Vintage font */
+    background-color: #f4f4f4;
+    /* Soft background color */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    padding: 20px; /* Adjusted padding */
+    align-items: center;
+    /* Center content horizontally */
+    padding: 20px;
+    /* Adjusted padding */
 }
 
 /* Welcome message */
 .welcome-msg {
-    background-color: #ffffff; /* White background for a clean look */
+    background-color: #ffffff;
+    /* White background for a clean look */
     padding: 20px;
-    border-radius: 8px; /* Rounded corners for softness */
+    border-radius: 8px;
+    /* Rounded corners for softness */
     margin-bottom: 20px;
     text-align: center;
-    font-size: 24px; /* Slightly larger font for prominence */
-    color: #333; /* Dark gray for better readability */
-    border: 2px solid #c5b299; /* Light brown border to match vintage theme */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 24px;
+    /* Slightly larger font for prominence */
+    color: #333;
+    /* Dark gray for better readability */
+    border: 2px solid #c5b299;
+    /* Light brown border to match vintage theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
 }
 
 .welcome-msg h1 {
-    margin: 0; /* Remove default margin */
-    font-family: 'Old Standard TT', serif; /* Vintage font */
-    font-size: 28px; /* Larger font size for emphasis */
+    margin: 0;
+    /* Remove default margin */
+    font-family: 'Old Standard TT', serif;
+    /* Vintage font */
+    font-size: 28px;
+    /* Larger font size for emphasis */
 }
 
 
 /* Content box for the subject list */
 .content-box {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
+    /* White background */
     padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    width: 100%; /* Full width */
-    max-width: 600px; /* Max width for better readability */
-    border: 1px solid #c5b299; /* Vintage border */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    width: 100%;
+    /* Full width */
+    max-width: 600px;
+    /* Max width for better readability */
+    border: 1px solid #c5b299;
+    /* Vintage border */
 }
 
 /* Course list styles */
 ul {
-    list-style-type: none; /* Remove default list style */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    list-style-type: none;
+    /* Remove default list style */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
 }
 
 ul li {
-    padding: 10px 0; /* Vertical padding */
-    border-bottom: 1px solid #ddd; /* Light gray border */
-    font-size: 18px; /* Font size */
-    color: #333; /* Dark text color */
+    padding: 10px 0;
+    /* Vertical padding */
+    border-bottom: 1px solid #ddd;
+    /* Light gray border */
+    font-size: 18px;
+    /* Font size */
+    color: #333;
+    /* Dark text color */
 }
 
 ul li:last-child {
-    border-bottom: none; /* Remove border for last item */
+    border-bottom: none;
+    /* Remove border for last item */
 }
 
 /* No slots available message */
 .no-slots {
-    color: #dc3545; /* Red color for no slots message */
-    font-style: italic; /* Italic style */
+    color: #dc3545;
+    /* Red color for no slots message */
+    font-style: italic;
+    /* Italic style */
 }
 
 /* Action buttons */
 .actions {
-    margin-top: 20px; /* Space above buttons */
-    text-align: center; /* Center buttons */
+    margin-top: 20px;
+    /* Space above buttons */
+    text-align: center;
+    /* Center buttons */
 }
 
 .actions .btn {
-    padding: 10px 15px; /* Button padding */
-    margin: 5px; /* Button margin */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 16px; /* Font size */
-    text-decoration: none; /* No underline */
-    color: #fff; /* White text color */
+    padding: 10px 15px;
+    /* Button padding */
+    margin: 5px;
+    /* Button margin */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 16px;
+    /* Font size */
+    text-decoration: none;
+    /* No underline */
+    color: #fff;
+    /* White text color */
 }
 
 .btn-primary {
-    background-color: #007bff; /* Primary button color */
+    background-color: #007bff;
+    /* Primary button color */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
+    /* Darker shade on hover */
 }
 
 .btn-secondary {
-    background-color: #6c757d; /* Secondary button color */
+    background-color: #6c757d;
+    /* Secondary button color */
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268; /* Darker shade on hover */
+    background-color: #5a6268;
+    /* Darker shade on hover */
 }
 
 /* Optional message display styling */
 .messages-list {
-    margin: 20px 0; /* Space for messages */
+    margin: 20px 0;
+    /* Space for messages */
 }
 
 .alert {
-    padding: 10px; /* Padding for alerts */
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Space below alerts */
-    text-align: left; /* Left align text */
+    padding: 10px;
+    /* Padding for alerts */
+    background-color: #d4edda;
+    /* Light green background */
+    color: #155724;
+    /* Dark green text */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 10px;
+    /* Space below alerts */
+    text-align: left;
+    /* Left align text */
 }
 
 
 .alert-success {
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
+    background-color: #d4edda;
+    /* Light green background */
+    color: #155724;
+    /* Dark green text */
     padding: 15px;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
+    /* Rounded corners */
     margin-bottom: 20px;
-    text-align: center; /* Centered text */
-    border: 1px solid #c3e6cb; /* Slightly darker green border */
-    font-size: 24px; /* Larger font size */
-    animation: bounce 1.5s ease-in-out, fade-in 0.5s ease; /* Add bounce and fade-in animations */
-    transition: transform 0.3s ease; /* Smooth transform transition */
+    text-align: center;
+    /* Centered text */
+    border: 1px solid #c3e6cb;
+    /* Slightly darker green border */
+    font-size: 24px;
+    /* Larger font size */
+    animation: bounce 1.5s ease-in-out, fade-in 0.5s ease;
+    /* Add bounce and fade-in animations */
+    transition: transform 0.3s ease;
+    /* Smooth transform transition */
 }
 
 /* Bounce Animation */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
-        transform: translateY(-10px); /* Bounce up */
+        transform: translateY(-10px);
+        /* Bounce up */
     }
+
     60% {
-        transform: translateY(-5px); /* Bounce down */
+        transform: translateY(-5px);
+        /* Bounce down */
     }
 }
 
 /* Fade-in Animation */
 @keyframes fade-in {
     from {
-        opacity: 0; /* Start invisible */
+        opacity: 0;
+        /* Start invisible */
     }
+
     to {
-        opacity: 1; /* Fade in */
+        opacity: 1;
+        /* Fade in */
     }
 }
 
 /* Add some extra styling for hover effects */
 .alert-success:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    cursor: pointer; /* Change cursor on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+    cursor: pointer;
+    /* Change cursor on hover */
 }
 
 .quota-header {
-    font-family: 'Old Standard TT', serif; /* Vintage font */
-    font-size: 28px; /* Large font size for header */
-    color: #333; /* Dark gray for good readability */
-    text-align: center; /* Center the header */
-    margin-bottom: 20px; /* Space below the header */
+    font-family: 'Old Standard TT', serif;
+    /* Vintage font */
+    font-size: 28px;
+    /* Large font size for header */
+    color: #333;
+    /* Dark gray for good readability */
+    text-align: center;
+    /* Center the header */
+    margin-bottom: 20px;
+    /* Space below the header */
 }
 
 .quota-list {
-    list-style-type: none; /* Remove default list style */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    max-width: 600px; /* Maximum width for better readability */
-    margin: 0 auto; /* Center the list */
+    list-style-type: none;
+    /* Remove default list style */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+    max-width: 600px;
+    /* Maximum width for better readability */
+    margin: 0 auto;
+    /* Center the list */
 }
 
 .quota-item {
-    background-color: #ffffff; /* White background */
-    border: 2px solid #c5b299; /* Light brown border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Padding around each item */
-    margin-bottom: 10px; /* Space between items */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    background-color: #ffffff;
+    /* White background */
+    border: 2px solid #c5b299;
+    /* Light brown border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 15px;
+    /* Padding around each item */
+    margin-bottom: 10px;
+    /* Space between items */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    transition: transform 0.3s ease;
+    /* Smooth transition for hover effect */
 }
 
 .quota-item:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
+    transform: scale(1.02);
+    /* Slightly enlarge on hover */
 }
 
 .cancel-link {
-    color: #dc3545; /* Red color for cancel link */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold for emphasis */
+    color: #dc3545;
+    /* Red color for cancel link */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+    /* Bold for emphasis */
 }
 
 .cancel-link:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
+    /* Underline on hover */
 }
 
 .no-requests {
-    text-align: center; /* Centered text */
-    color: #dc3545; /* Red color for no requests message */
-    font-style: italic; /* Italic style for emphasis */
-    font-size: 18px; /* Slightly larger font size */
+    text-align: center;
+    /* Centered text */
+    color: #dc3545;
+    /* Red color for no requests message */
+    font-style: italic;
+    /* Italic style for emphasis */
+    font-size: 18px;
+    /* Slightly larger font size */
 }
 
 .message-list {
-    list-style-type: none; /* Remove default list style */
-    padding: 0; /* Remove padding */
-    margin: 20px 0; /* Space around messages */
+    list-style-type: none;
+    /* Remove default list style */
+    padding: 0;
+    /* Remove padding */
+    margin: 20px 0;
+    /* Space around messages */
 }
 
 .alert {
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
-    padding: 15px; /* Padding around alerts */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Space below alerts */
-    text-align: center; /* Center text */
-    border: 1px solid #c3e6cb; /* Slightly darker green border */
+    background-color: #d4edda;
+    /* Light green background */
+    color: #155724;
+    /* Dark green text */
+    padding: 15px;
+    /* Padding around alerts */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 10px;
+    /* Space below alerts */
+    text-align: center;
+    /* Center text */
+    border: 1px solid #c3e6cb;
+    /* Slightly darker green border */
 }
 
 /* General Styles */
@@ -565,78 +734,107 @@ ul li:last-child {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-    border: 2px solid #c5b299; /* Light brown border */
+    border: 2px solid #c5b299;
+    /* Light brown border */
 }
 
 .quota-header {
-    font-size: 24px; /* Font size for headers */
+    font-size: 24px;
+    /* Font size for headers */
     margin-bottom: 20px;
-    color: #333; /* Dark color for headers */
+    color: #333;
+    /* Dark color for headers */
 }
 
 .quota-list {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0; /* Remove padding */
-    margin: 20px 0; /* Space around list */
+    list-style-type: none;
+    /* Remove default bullet points */
+    padding: 0;
+    /* Remove padding */
+    margin: 20px 0;
+    /* Space around list */
 }
 
 .quota-item {
-    margin-bottom: 15px; /* Space between items */
-    font-size: 16px; /* Font size for items */
-    color: #333; /* Text color */
+    margin-bottom: 15px;
+    /* Space between items */
+    font-size: 16px;
+    /* Font size for items */
+    color: #333;
+    /* Text color */
 }
 
 .no-requests {
-    color: #dc3545; /* Red color for no requests message */
+    color: #dc3545;
+    /* Red color for no requests message */
 }
 
 .cancel-link {
-    color: #fff; /* White text for links */
-    background-color: #dc3545; /* Red background for cancel link */
+    color: #fff;
+    /* White text for links */
+    background-color: #dc3545;
+    /* Red background for cancel link */
     padding: 5px 10px;
     border-radius: 5px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    /* Remove underline */
 }
 
 .cancel-link:hover {
-    background-color: #c82333; /* Darker shade on hover */
+    background-color: #c82333;
+    /* Darker shade on hover */
 }
 
 .message-list {
-    text-align: center; /* Center-aligns the text within the list */
+    text-align: center;
+    /* Center-aligns the text within the list */
     margin: 20px 0;
 }
 
 .alert {
     padding: 10px;
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Space between alerts */
+    background-color: #d4edda;
+    /* Light green background */
+    color: #155724;
+    /* Dark green text */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 10px;
+    /* Space between alerts */
 }
 
 .btn {
-    display: inline-block; /* Inline block for buttons */
+    display: inline-block;
+    /* Inline block for buttons */
     padding: 10px 15px;
     margin: 10px 5px;
-    font-size: 16px; /* Font size for buttons */
-    text-decoration: none; /* No underline */
-    color: #fff; /* White text */
-    background-color: #b58d76; /* Vintage button color */
-    border-radius: 5px; /* Rounded corners for buttons */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    font-size: 16px;
+    /* Font size for buttons */
+    text-decoration: none;
+    /* No underline */
+    color: #fff;
+    /* White text */
+    background-color: #b58d76;
+    /* Vintage button color */
+    border-radius: 5px;
+    /* Rounded corners for buttons */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
 }
 
 .btn:hover {
-    background-color: #c5b299; /* Lighter shade on hover */
+    background-color: #c5b299;
+    /* Lighter shade on hover */
 }
 
 .btn-primary {
-    background-color: #007bff; /* Blue background for primary button */
+    background-color: #007bff;
+    /* Blue background for primary button */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
+    /* Darker shade on hover */
 }
 
 .alert {
@@ -647,113 +845,161 @@ ul li:last-child {
 }
 
 .alert.alert-success {
-    background-color: #d4edda; /* Light green for success messages */
-    color: #155724; /* Dark green text */
+    background-color: #d4edda;
+    /* Light green for success messages */
+    color: #155724;
+    /* Dark green text */
 }
 
 .alert.alert-warning {
-    background-color: #fff3cd; /* Light yellow for warnings */
-    color: #856404; /* Dark yellow text */
+    background-color: #fff3cd;
+    /* Light yellow for warnings */
+    color: #856404;
+    /* Dark yellow text */
 }
 
 .alert.alert-error {
-    background-color: #f8d7da; /* Light red for errors */
-    color: #721c24; /* Dark red text */
+    background-color: #f8d7da;
+    /* Light red for errors */
+    color: #721c24;
+    /* Dark red text */
 }
 
 /* New style for warning messages */
 .alert-warning {
-    background-color: #f8d7da; /* Light red background */
-    color: #721c24; /* Dark red text */
+    background-color: #f8d7da;
+    /* Light red background */
+    color: #721c24;
+    /* Dark red text */
 }
 
 .quota-message {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 100vh; /* Make sure it takes the full height of the viewport */
-    text-align: center; /* Centers text */
-    color: #333; /* Text color */
-    font-size: 24px; /* Adjust font size as needed */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    height: 100vh;
+    /* Make sure it takes the full height of the viewport */
+    text-align: center;
+    /* Centers text */
+    color: #333;
+    /* Text color */
+    font-size: 24px;
+    /* Adjust font size as needed */
 }
 
 .message-list {
     display: flex;
-    flex-direction: column; /* Stack messages vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    list-style-type: none; /* Remove bullet points */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-    height: 100vh; /* Full height of the viewport */
+    flex-direction: column;
+    /* Stack messages vertically */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    list-style-type: none;
+    /* Remove bullet points */
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
+    height: 100vh;
+    /* Full height of the viewport */
 }
 
 .alert {
-    text-align: center; /* Center text within each message */
-    margin: 10px 0; /* Space between messages */
+    text-align: center;
+    /* Center text within each message */
+    margin: 10px 0;
+    /* Space between messages */
 }
 
 .container {
-    max-width: 800px; /* Adjust the max width as necessary */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Add some padding */
+    max-width: 800px;
+    /* Adjust the max width as necessary */
+    margin: 0 auto;
+    /* Center the container */
+    padding: 20px;
+    /* Add some padding */
 }
 
 .message-list {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove padding */
-    margin-bottom: 20px; /* Space between messages and the quota list */
+    list-style: none;
+    /* Remove default list styles */
+    padding: 0;
+    /* Remove padding */
+    margin-bottom: 20px;
+    /* Space between messages and the quota list */
 }
 
 .message-list .alert {
     padding: 10px;
-    margin-bottom: 10px; /* Space between messages */
-    border: 1px solid #ccc; /* Optional border for messages */
-    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px;
+    /* Space between messages */
+    border: 1px solid #ccc;
+    /* Optional border for messages */
+    border-radius: 5px;
+    /* Rounded corners */
 }
 
 .quota-list {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove padding */
+    list-style: none;
+    /* Remove default list styles */
+    padding: 0;
+    /* Remove padding */
 }
 
 .quota-item {
-    margin-bottom: 10px; /* Space between quota items */
+    margin-bottom: 10px;
+    /* Space between quota items */
 }
 
 .btn {
-    display: inline-block; /* Make it a block element */
-    padding: 10px 15px; /* Button padding */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners */
+    display: inline-block;
+    /* Make it a block element */
+    padding: 10px 15px;
+    /* Button padding */
+    background-color: #007bff;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    text-decoration: none;
+    /* Remove underline */
+    border-radius: 5px;
+    /* Rounded corners */
 }
 
 .btn-light-brown {
-    background-color: #D2B48C; /* Light brown */
-    color: white; /* Text color */
+    background-color: #D2B48C;
+    /* Light brown */
+    color: white;
+    /* Text color */
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    /* Remove underline */
 }
 
 .btn-light-red {
-    background-color: #F08080; /* Light red */
-    color: white; /* Text color */
+    background-color: #F08080;
+    /* Light red */
+    color: white;
+    /* Text color */
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
+    /* Remove underline */
 }
 
 /* Add hover effects */
 .btn-light-brown:hover {
-    background-color: #96754d; /* Darker brown on hover */
+    background-color: #96754d;
+    /* Darker brown on hover */
 }
 
 .btn-light-red:hover {
-    background-color: #E57373; /* Darker red on hover */
+    background-color: #E57373;
+    /* Darker red on hover */
 }
-

@@ -14,16 +14,23 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name="Course",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('course_id', models.CharField(max_length=100)),
-                ('name', models.CharField(max_length=100)),
-                ('semester', models.PositiveIntegerField(default=0)),
-                ('year', models.PositiveIntegerField(default=0)),
-                ('capacity', models.PositiveIntegerField(default=0)),
-                ('is_open', models.BooleanField(default=True)),
-                ('enrolled_users', models.ManyToManyField(blank=True, related_name='courses', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("course_id", models.CharField(max_length=100)),
+                ("name", models.CharField(max_length=100)),
+                ("semester", models.PositiveIntegerField(default=0)),
+                ("year", models.PositiveIntegerField(default=0)),
+                ("capacity", models.PositiveIntegerField(default=0)),
+                ("is_open", models.BooleanField(default=True)),
             ],
         ),
     ]

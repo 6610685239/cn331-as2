@@ -14,7 +14,7 @@
         <ul class="quota-list">
             {% for enrollment in enrollments %}
             <li class="quota-item">
-                {{ enrollment.course.name }} - ลงทะเบียนเมื่อ {{ enrollment.requested_at }}
+                {{ enrollment.course.course_id }} - {{ enrollment.course.name }} - ลงทะเบียนเมื่อ {{ enrollment.requested_at }}
                 <a href="{% url 'cancel_quota' enrollment.id %}" class="cancel-link">Cancel Request</a>
             </li>
             {% empty %}
