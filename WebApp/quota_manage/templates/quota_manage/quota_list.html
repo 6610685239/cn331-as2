@@ -1,19 +1,40 @@
-<h1>Your Quota Requests</h1>
-<ul>
-    {% for enrollment in enrollments %}
-    <li>
-        {{ enrollment.course.name }} - ลงทะเบียนเมื่อ {{ enrollment.requested_at }}
-        <a href="{% url 'cancel_quota' enrollment.id %}">Cancel Request</a>
-    </li>
-    {% empty %}
-    <li>No quota requests found.</li>
-    {% endfor %}
-</ul>
-{% if messages %}
-    <ul>
-        {% for message in messages %}
-            <li class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-    </ul>
-{% endif %}
-<a href="{% url 'user_home' %}" class="btn btn-primary">กลับหน้า Home</a>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Update with your actual CSS path -->
+    <title>Quota Requests</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="quota-header">Your Quota Requests</h1>
+        <ul class="quota-list">
+            {% for enrollment in enrollments %}
+            <li class="quota-item">
+                {{ enrollment.course.name }} - ลงทะเบียนเมื่อ {{ enrollment.requested_at }}
+                <a href="{% url 'cancel_quota' enrollment.id %}" class="cancel-link">Cancel Request</a>
+            </li>
+            {% empty %}
+            <li class="no-requests">No quota requests found.</li>
+            {% endfor %}
+        </ul>
+
+        <div class="message-container">
+            {% if messages %}
+                <ul class="message-list">
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="button-container">
+            <a href="{% url 'user_home' %}" class="btn btn-primary">กลับหน้า Home</a>
+        </div>
+    </div>
+</body>
+</html>

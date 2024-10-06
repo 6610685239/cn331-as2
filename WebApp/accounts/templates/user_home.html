@@ -1,27 +1,52 @@
-<h1>Welcome, {{ request.user.username }}</h1>
+{% load static %}
 
-<h2>Courses ที่เปิดให้ลงทะเบียน</h2>
-<ul>
-    {% for course in courses %}
-    <li>
-        {{ course.course_id }} - {{ course.name }} - {{ course.available_slots }} ที่ว่าง
-        {% if course.can_enroll %}
-        <a href="{% url 'request_quota' course.id %}">ขอโควต้า</a>
-        {% else %}
-        No slots available or closed
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>User Home</title>
+</head>
+<body>
+
+    <!-- Welcome Box outside of the subject content -->
+    <div class="welcome-msg">
+        <h1>Welcome to Course Registration , Participant : {{ request.user.username }}</h1>
+    </div>
+
+    <div class="content-box">
+        <!-- Subject List Box -->
+        <h2>Courses Available for Registration</h2>
+        <ul>
+            {% for course in courses %}
+            <li class="course-item">
+                {{ course.course_id }} - {{ course.name }} - {{ course.available_slots }} slots available
+                {% if course.can_enroll %}
+                <a href="{% url 'request_quota' course.id %}" class="course-link">Request Quota</a>
+                {% else %}
+                <span class="no-slots">No slots available or closed</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <!-- Optional message display -->
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
         {% endif %}
-    </li>
-    {% endfor %}
 
-    
-</ul>
-{% if messages %}
-    <ul>
-        {% for message in messages %}
-            <li class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-    </ul>
-{% endif %}
-<a href="{% url 'login' %}" class="btn btn-primary">ลงชื่อออก</a>
+        <div class="actions">
+            <a href="{% url 'quota_list' %}" class="btn btn-light-brown">View Registration Results</a>
+            <a href="{% url 'login' %}" class="btn btn-light-red">Log Out</a>
+        </div>
+        
+    </div>
 
-<p><a href="{%url 'quota_list' %}">ผลการลงทะเบียน</a></p>
+    <!-- Link your JS file -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

@@ -1,17 +1,72 @@
-<!DOCTYPE html>
+{% load static %}
 
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
     <head>
-     
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Signup</title>
     </head>
-    <body>
+<body>
+    <div class="signup-box">
         <h1>Signup</h1>
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Signup</button>
-            <a href="{% url 'login' %}">Already have account?</a>
+            
+            <!-- Username Field -->
+            <div class="field {% if form.username.errors %}error{% endif %}">
+                <div class="input-area">
+                    <i class="icon fas fa-user"></i>
+                    {{ form.username }}
+                </div>
+                <!-- Display errors for the username field -->
+                {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                        <div class="error-txt">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+    
+            <!-- Password1 Field -->
+<div class="field">
+    <div class="input-area">
+        <i class="icon fas fa-lock"></i>
+        {{ form.password1 }}
+        <i class="toggle-password fas fa-eye" onclick="togglePassword('id_password1')"></i>
+    </div>
+    <!-- Display errors for the password1 field -->
+    {% if form.password1.errors %}
+        {% for error in form.password1.errors %}
+            <div class="error error-txt">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<!-- Password2 Field -->
+<div class="field">
+    <div class="input-area">
+        <i class="icon fas fa-lock"></i>
+        {{ form.password2 }}
+        <i class="toggle-password fas fa-eye" onclick="togglePassword('id_password2')"></i>
+    </div>
+    <!-- Display errors for the password2 field -->
+    {% if form.password2.errors %}
+        {% for error in form.password2.errors %}
+            <div class="error error-txt">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+    
+            <!-- Submit Button -->
+            <input type="submit" value="Signup">
         </form>
-        
-    </body>
+    
+        <div class="sign-txt">Already have an account? <a href="{% url 'login' %}">Login</a></div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+    
+    
+</body>
 </html>
