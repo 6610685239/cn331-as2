@@ -13,8 +13,8 @@ class EnrollmentModelTest(TestCase):
             username="testuser", password="password123"
         )
         self.course = Course.objects.create(
-            course_id="C101",
-            name="Mathematics",
+            course_id="CN331",
+            name="Django",
             semester=1,
             year=2024,
             capacity=30,
@@ -37,7 +37,7 @@ class EnrollmentViewTest(TestCase):
 
         # Create an open course
         self.course = Course.objects.create(
-            course_id="C101",
+            course_id="CN331T",
             name="Open Course",
             semester=1,
             year=2024,

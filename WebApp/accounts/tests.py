@@ -14,8 +14,8 @@ class ViewsTest(TestCase):
         )
 
         self.course = Course.objects.create(
-            course_id="C101",
-            name="Mathematics",
+            course_id="CN331",
+            name="Django",
             semester=1,
             year=2024,
             capacity=30,
@@ -98,4 +98,4 @@ class ViewsTest(TestCase):
         response = self.client.get(reverse("user_home"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "user_home.html")
-        self.assertContains(response, "Mathematics")
+        self.assertContains(response, "Django")

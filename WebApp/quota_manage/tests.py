@@ -16,8 +16,8 @@ class QuotaManageViewTest(TestCase):
 
         # Create a course and an enrollment for the user
         self.course = Course.objects.create(
-            course_id="C101",
-            name="Mathematics",
+            course_id="CN331",
+            name="Django",
             semester=1,
             year=2024,
             capacity=30,

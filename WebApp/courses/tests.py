@@ -10,8 +10,8 @@ class CourseModelTest(TestCase):
         # Create a user and a course for testing purposes
         self.user = User.objects.create_user(username="testuser", password="zazazaza")
         self.course = Course.objects.create(
-            course_id="C101",
-            name="Mathematics",
+            course_id="CN331",
+            name="Django",
             semester=1,
             year=2024,
             capacity=30,
@@ -19,7 +19,7 @@ class CourseModelTest(TestCase):
         )
 
     def test_course_str_method(self):
-        self.assertEqual(str(self.course), "Mathematics")
+        self.assertEqual(str(self.course), "Django")
 
     def test_available_slots_property(self):
         self.assertEqual(self.course.available_slots, 30)
