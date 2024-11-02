@@ -2,13 +2,26 @@ name: Testing
 on: push
 
 jobs:
-  test_project:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run Django unit tests
-      run: |
-        python manage.py makemigrations
-        python manage.py migrate
-        coverage run --source='.' manage.py test
-        coverage report
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' 
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run migrations and tests
+        working-directory: ./cn331-as2/tree/main/WebApp 
+        run: |
+          python manage.py makemigrations
+          python manage.py migrate
+          coverage run --source='.' manage.py test
+          coverage report
