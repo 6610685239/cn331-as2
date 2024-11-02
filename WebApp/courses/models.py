@@ -17,6 +17,7 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
     @property
     def available_slots(self):
         """ตรวจสอบจำนวนที่ยังเหลืออยู่"""
@@ -27,7 +28,7 @@ class Course(models.Model):
         return self.is_open and self.available_slots > 0
 
     def enroll_user(self, user):
-        if self.can.enroll():
-            self.enrolled_user.add(user)
+        if self.can_enroll() and user not in self.enrolled_users.all():
+            self.enrolled_users.add(user)
             return True
         return False
