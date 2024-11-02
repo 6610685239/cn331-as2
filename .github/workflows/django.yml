@@ -18,7 +18,7 @@ jobs:
           pip install --upgrade pip
 
       - name: Run migrations and tests
-        working-directory: ./cn331-as2/tree/main/WebApp 
+        working-directory: WebApp 
         run: |
           python manage.py makemigrations
           python manage.py migrate
