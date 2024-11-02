@@ -9,8 +9,6 @@ from enrollment.models import Enrollment
 
 # Create your views here.
 
-def index(request):
-    return render(request, "index.html")
 
 def login_views(request):
     if request.method == "POST":
@@ -26,8 +24,6 @@ def login_views(request):
                     return redirect("/admin/")
                 else:
                     return redirect("user_home")
-            else:
-                form.add_error(None, "Please enter a correct username and password.")
     else:
         form = LoginForm()
 
@@ -50,11 +46,10 @@ def user_signup(request):
     return render(request, "signup.html", {"form": form})
 
 
-
-
 def user_logout(request):
     logout(request)
     return redirect("login")
+
 
 @login_required  # Ensure that only logged-in users can access this view
 def user_home(request):
