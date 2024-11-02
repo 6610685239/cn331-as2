@@ -29,18 +29,26 @@ class CourseAdmin(admin.ModelAdmin):
     get_enrolled_users.short_description = "Enrolled Users"
 
     def save_related(self, request, form, formsets, change):
-        before_save_users = set(form.instance.enrolled_users.all())
-        super().save_related(request, form, formsets, change)
+        # Retrieve the set of users before saving changes
         course = form.instance
+        before_save_users = set(course.enrolled_users.all())
+
+        # Save the form and formsets (i.e., apply changes to `enrolled_users`)
+        super().save_related(request, form, formsets, change)
+
+        # Retrieve the updated set of users after saving changes
         after_save_users = set(course.enrolled_users.all())
-        # บันทึกข้อมูลในตาราง Enrollment เมื่อมีการเพิ่มผู้ใช้ในรายวิชาผ่าน admin
-        for user in course.enrolled_users.all():
-            # ตรวจสอบว่ามีการลงทะเบียนอยู่แล้วหรือไม่
+
+        # Handle added users (create Enrollment records)
+        for user in after_save_users - before_save_users:
             if not Enrollment.objects.filter(user=user, course=course).exists():
                 Enrollment.objects.create(user=user, course=course)
 
+        # Handle removed users (delete Enrollment records)
         for user in before_save_users - after_save_users:
             Enrollment.objects.filter(user=user, course=course).delete()
+
+    get_enrolled_users.short_description = "Enrolled Users"
 
 
 admin.site.register(Course, CourseAdmin)
