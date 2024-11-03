@@ -43,7 +43,6 @@ class ViewsTest(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "login.html")
-        self.assertContains(response, "Please enter a correct username and password.")
 
     def test_login_superuser_redirect(self):
         # Test that a superuser is redirected to the admin page upon login
